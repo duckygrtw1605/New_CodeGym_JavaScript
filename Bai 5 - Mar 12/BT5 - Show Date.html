@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị ngày-tháng-năm</title>
+</head>
+<body>
+    <script>
+        //Nhap ngay thang nam sinh
+        let inputDay = parseInt(prompt("Nhap ngay sinh: "));
+        let inputMonth = parseInt(prompt("Nhap thang sinh: "));
+        let inputYear = parseInt(prompt("Nhap nam sinh: "));
+        // In KQ
+        document.write("Your D.O.B: " + (inputDay < 10 ? "0" + inputDay : inputDay) + "-" + (inputMonth < 10 ? "0" + inputMonth : inputMonth) + "-" + inputYear);
+        //conditional expression: condition ? true : false
+    </script>
+</body>
+</html>
