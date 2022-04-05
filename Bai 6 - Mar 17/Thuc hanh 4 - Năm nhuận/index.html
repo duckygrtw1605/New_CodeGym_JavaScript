@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[*Thực hành] Kiểm tra năm nhuận</title>
+</head>
+
+<body>
+    <h2>Nhập một năm bất kì ở dưới: </h2>
+    Năm: <input type="number" id="inputYear">
+    <button onclick="showResult()">Kiểm tra</button>
+    <br>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        let inputYear = document.getElementById("inputYear");
+        let year;
+        //Đổi year thành Int
+        inputYear.addEventListener('change', function () {
+            year = parseInt(inputYear.value);
+        })
+        // Các hàm kiểm tra năm nhuận:
+        function showResult() {
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        document.getElementById("result").innerHTML = year + " là năm nhuận";
+                    }
+                    else {
+                        document.getElementById("result").innerHTML = year + " KHÔNG là năm nhuận";
+                    }
+                }
+                else {
+                    document.getElementById("result").innerHTML = year + " là năm nhuận";
+                }
+            }
+            else {
+                document.getElementById("result").innerHTML = year + " KHÔNG là năm nhuận";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

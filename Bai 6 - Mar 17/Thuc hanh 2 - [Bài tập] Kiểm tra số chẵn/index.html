@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Kiểm tra số chẵn</title>
+</head>
+
+<body>
+    <h3>Nhập một số vào ô bên dưới, để kiểm tra số chẵn</h3>
+    <input type="number" id="inputNumber"> Nhập một số bất kì
+    <br>
+    <br>
+    <button type="button" onclick="showResult()">Kiểm tra</button>
+    <!--  -->
+    <h3>Nhập một số vào ô bên dưới, để kiểm tra số chẵn</h3>
+    <input type="number" id="inputNumber2"> Nhập một số bất kì
+    <br>
+    <br>
+    <button type="button" id="click-button">Kiểm tra</button>
+
+    <script>
+        var inputNumber = document.getElementById("inputNumber");
+        //Cách 1:
+        function showResult() {
+            let number1 = parseInt(inputNumber.value);
+            let isEven = (number1 % 2 == 0) ? "Even" : "Odd";
+            alert(number1 + " is " + isEven);
+        }
+
+        //Cách 2:
+        var button2 = document.getElementById("click-button");
+        var inputNumber2 = document.getElementById("inputNumber2");
+        button2.addEventListener("click", showResult2);
+        function showResult2() {
+            let number2 = parseInt(inputNumber2.value);
+            let isEven = (number2 % 2 == 0) ? "Even" : "Odd";
+            alert(number2 + " is " + isEven);
+        }
+
+    
+    </script>
+</body>
+
+</html>

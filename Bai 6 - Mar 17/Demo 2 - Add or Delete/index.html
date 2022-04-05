@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" id="index-content">
+        <h1>Hello</h1>
+    </div>
+
+    <script>
+        // Define phan tu can thay doi
+        let indexContent = document.getElementById("index-content");
+        // Tao mot phan tu voi creat
+        let p = document.createElement('p');
+        // Them noi dung cho phan tu vua moi tao
+        p.innerText = "This is the new p tag";
+        // Them phan tu vao dom
+        indexContent.appendChild(p); //p se la con cua indexContent
+        /// Practice
+        let h3 = document.createElement('h3');
+        h3.innerText = "This is the new h3 tag";
+        indexContent.appendChild(h3);
+        /// Practice
+        let a = document.createElement('a');
+        a.appendChild(p); //p se la con cua a
+        indexContent.appendChild(a);
+        // REMOVE CHILD
+        indexContent.removeChild(h3);
+
+    </script>
+</body>
+</html>

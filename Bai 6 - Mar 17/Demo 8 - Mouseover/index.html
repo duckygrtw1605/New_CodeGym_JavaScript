@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo sự kiện onmouseover và onmouseout</title>
+</head>
+<body>
+    <p id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">This is the 1st text</p>
+    <br>
+    <br>
+    <p id="demo2">This is the 2nd text</p>
+
+    <script>
+        //Cách 1:
+        debugger
+        function mouseOver() {
+            document.getElementById("demo").style.color = "red";
+        }
+        function mouseOut() {
+            document.getElementById("demo").style.color = "blue";
+        }
+
+        //Cách 2:
+        var demo2 = document.getElementById("demo2");
+        demo2.addEventListener("mouseover",mouseOver2);
+        demo2.addEventListener("mouseout",mouseOut2);
+        function mouseOver2() {
+            document.getElementById("demo2").style.color = "red";
+        }
+
+        function mouseOut2() {
+            document.getElementById("demo2").style.color = "blue";
+        }
+    </script>
+</body>
+</html>

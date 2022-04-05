@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <button onclick="alert('Clicked')">Click me!</button>
+        <button onclick="logTime()">What time is it?</button>
+        <button onclick="logName('This is a name')">Click to show Name!</button>
+        <button class="demoBtn-Obj" onclick="demoObject(this)">Click to see Object</button>
+
+        <div id="add-element"></div>
+        <button id="event-Btn" onclick="addElement()">Add Element</button>
+
+    </div>
+    <script>
+        // Click de hien thi text/real time
+        function logTime() {
+            let now = new Date();
+            // console.log(now);
+            alert('It is ' + now);
+
+        }
+        function logName(name) {
+            console.log(name);
+        }
+        //
+        function demoObject(object) {
+            console.log(object);
+            object.style.color = 'red';
+        }
+        //Them tag moi khi click
+        function addElement() {
+            let p = document.createElement('p');
+            p.innerText = "This is a text";
+            document.getElementById('add-element').append(p);
+        }
+
+        let eventBtn = document.getElementById('event-Btn');
+        let elementAdd = document.getElementById ('add-element');
+        eventBtn.addEventListener('click', addElement);
+        eventBtn.addEventListener('click', function() {
+            elementAdd.style.backgroundColor = "red";
+        });
+
+
+    </script>
+</body>
+</html>

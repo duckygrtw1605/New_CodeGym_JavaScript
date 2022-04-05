@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Ứng dụng máy tính</title>
+</head>
+
+<body>
+    <h2>Calculator</h2>
+    <form action="#" id="inputNumbers">
+        <input type="number" id="inputNumber1">
+        <input type="number" id="inputNumber2">
+    </form>
+    <br>
+    <div id="buttons">
+        <button onclick="addResult()">Add (+)</button>
+        <button onclick="subtractResult()">Subtract (-)</button>
+        <button onclick="divideResult()">Divide (/)</button>
+        <button onclick="multiplyResult()">Multiply (*)</button>
+    </div>
+    <br>
+    <div>
+        <p id="showResult"></p>
+    </div>
+
+    <script>
+        var inputNumber1 = document.getElementById("inputNumber1");
+        var inputNumber2 = document.getElementById("inputNumber2");
+        var number1, number2;
+
+        inputNumber1.addEventListener('change', function() {
+            number1 = parseFloat(inputNumber1.value);
+        })
+        inputNumber2.addEventListener('change', function() {
+            number2 = parseFloat(inputNumber2.value);
+        })
+
+        function addResult() {
+            //Phép tính:
+            let sum = number1 + number2;
+            document.getElementById("showResult").innerHTML = ("Result: " + sum);
+
+        }
+        function subtractResult() {
+            //Phép tính:
+            let subtraction = number1 - number2;
+            document.getElementById("showResult").innerHTML = ("Result: " + subtraction);
+        }
+        function divideResult() {
+            //Phép tính:
+            let division = (number1 / number2).toFixed(2);
+            document.getElementById("showResult").innerHTML = ("Result: " + division);
+        }
+        function multiplyResult() {
+            //Phép tính:
+            let multiplication = number1 * number2;
+            document.getElementById("showResult").innerHTML = ("Result: " + multiplication);
+        }
+
+
+    </script>
+</body>
+
+</html>

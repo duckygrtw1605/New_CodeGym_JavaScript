@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Các cách nhận dữ liệu đầu vào</title>
+</head>
+<body>
+    <input id="myName" type="text"></input>
+    <button type="button" onclick="getName()">Click để hiển thị tên</button>
+    <script>
+        function getName() {
+            let inputName = document.getElementById("myName");
+            let myName = inputName.value;
+
+            alert("Tên của bạn là: " + myName);
+        }
+    </script>
+</body>
+</html>

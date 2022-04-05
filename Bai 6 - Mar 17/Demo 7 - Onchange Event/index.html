@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo sự kiện onchange</title>
+</head>
+
+<body>
+    <select name="coffee-menu" id="demo" onchange="getCoffee()">
+        <option value="Americano">Americano</option>
+        <option value="Capuchino">Capuchino</option>
+        <option value="Black Coffee">Black Coffee</option>
+        <option value="Latte">Latte</option>
+    </select>
+    <br>
+    <br>
+    <select name="coffee-menu" id="demo-onchange">
+        <option value="Americano">Americano</option>
+        <option value="Capuchino">Capuchino</option>
+        <option value="Black Coffee">Black Coffee</option>
+        <option value="Latte">Latte</option>
+    </select>
+
+    <script>
+        //Cách 1:
+        function getCoffee() {
+            var coffee = document.getElementById("demo").value;
+            alert("This is " + coffee);
+        }
+
+        //Cách 2:
+        var selectID = document.getElementById("demo-onchange");
+        selectID.addEventListener("change", changeFunction);
+        function changeFunction() {
+            var selectedCoffee = document.getElementById("demo-onchange").value;
+            alert("This is " + selectedCoffee);
+        }
+
+    </script>
+</body>
+
+</html>
