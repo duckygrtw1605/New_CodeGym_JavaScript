@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Viết chương trình kiểm tra đăng nhập hệ thống của người dùng theo yêu cầu sau
+
+        // Yêu cầu người dùng nhập tên từ bàn phím. 
+
+        // Nếu tên nhập vào là Admin thì yêu cầu nhập mật khẩu.
+        // Nếu mật khẩu là TheMaster thì in ra chuỗi Welcome.
+        // Nếu mật khẩu nhập vào là null in ra chuỗi Canceled.
+        // Còn lại in ra chuỗi Wrong password. 
+        // Nếu tên nhập vào là null in ra chuỗi canceld.
+        // Còn lại in ra chuỗi “I don’t know you”
+
+        let username = prompt("Nhập username của bạn: "); //Nhập username
+        if (username == "Admin" || username == "admin") {
+            let password = prompt("Nhập mật khẩu: "); //Nhập mật khẩu
+            if (password == "TheMaster") { //Nhập đúng mật khẩu
+                alert("Welcome");
+            }
+            else if (password == "") { // != TheMaster && == "" (Không nhập gì)
+                alert("Cancel - No password found");
+            }
+            else { //Nhập sai MK !=TheMaster
+                alert("Wrong password");
+            }
+        }
+        else if (username == "") { //Không nhập username
+            alert("Cancel - No username found");
+        }
+        else {
+            alert("I don't know you");
+        }
+
+
+    </script>
+</body>
+
+</html>

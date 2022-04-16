@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Operator</title>
+</head>
+
+<body>
+    <script>
+        let a = 1,
+            b = 2,
+            result;
+        if (a + b < 4) {
+            result = "Smaller";
+        }
+        else {
+            result = "Bigger";
+        }
+
+        console.log(result);
+        console.log(a + b < 4 ? "Smaller" : "Bigger");
+
+        ///
+        let c = 10,
+            number;
+        if (c % 2 == 0) {
+            number = "even";
+        }
+        else if (c % 5 == 0) {
+            number = "Divided by 5";
+        }
+        else if (c % 3 == 0) {
+            number = "Divided by 3";
+        }
+        else {
+            number = "prime";
+        }
+
+        console.log(number);
+    </script>
+</body>
+
+</html>

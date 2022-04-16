@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập với toán tử ba ngôi</title>
+</head>
+
+<body>
+    <script>
+        //Bai 1:
+        let a = b = 1;
+        alert((a + b < 4) ? "Below" : "Above");
+
+        //Bai 2:
+// Nếu giá trị nhập vào là Employee thì hiển thị chuỗi Hello.
+// Còn lại nếu giá trị nhập vào là Director thì hiển thị chuỗi Greetings
+// Còn lại nếu giá trị nhập vào chuỗi rỗng thì hiển thị No login
+// Còn lại hiển thị chuỗi rỗng
+
+        let input = prompt("Nhập giá trị: ");
+        let message = (
+            input == "Employee" ? "Hello" : 
+            input == "Director" ? "Greetings" :
+            input == "" ? "No login" : ""
+        )
+        alert(message);
+        
+    </script>
+</body>
+
+</html>
