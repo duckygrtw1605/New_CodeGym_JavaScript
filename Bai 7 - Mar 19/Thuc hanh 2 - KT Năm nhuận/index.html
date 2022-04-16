@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+
+    <script>
+        let year = parseInt(prompt('Nhập một năm bất kì: '));
+        // Kiểm tra điều kiện 
+        while (year <= 0) {
+            year = parseInt(prompt('Nhập một năm bất kì: '));
+        }
+
+        // Những năm chia hết cho 4 mà không chia hết cho 100 là năm nhuận
+        if (year % 4 == 0) {
+            if (year % 100 != 0) {
+                alert('Đây là năm nhuận');
+            }
+            
+        }
+
+        // Những năm chia hết cho 100 mà không chia hết cho 400 thì KHÔNG PHẢI là năm nhuận
+        if (year % 100 == 0) {
+            if (year % 400 != 0) {
+                alert('Đây KHÔNG phải là năm nhuận');
+            } 
+        }
+
+        // Những năm chia hết đồng thời cho 100 và 400 là năm nhuận
+        else if (year % 100 == 0 && year % 400 == 0) {
+            alert('Đây là năm nhuận');
+            
+        }
+
+        else {
+            alert('Đây KHÔNG phải là năm nhuận');
+        }
+    </script>
+</body>
+
+</html>
