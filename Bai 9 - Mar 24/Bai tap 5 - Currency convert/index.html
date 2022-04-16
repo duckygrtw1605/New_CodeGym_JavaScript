@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+
+<body>
+    <h2>Tính chỉ số cân nặng của cơ thể</h2>
+    <form action="#">
+        Amount <input type="number" id="amount">
+    </form>
+    <br>
+
+    From currency:
+    <select name="from-currency" id="from-currency">
+        <option value="vietnamese-dong">Vietnamses dong</option>
+        <option value="USD">USD</option>
+    </select>
+    <br>
+    <br>
+    To currency:
+    <select name="to-currency" id="to-currency">
+        <option value="USD">USD</option>
+        <option value="vietnamese-dong">Vietnamses dong</option>
+    </select>
+    <br>
+    <br>
+
+    <button type="submit" onclick="showResult()">Convert</button>
+    <br>
+    <br>
+    <div id="result-area"></div>
+<!--  -->
+    <script>
+        function showResult() {
+            let amount = parseFloat(document.getElementById('amount').value);
+            let fromCurrency = document.getElementById('from-currency').value;
+            let toCurrency = document.getElementById('to-currency').value;
+            let conversion;
+
+            if (fromCurrency == "vietnamese-dong") {
+                conversion = (amount / 23300).toFixed(2);
+                document.getElementById('result-area').innerHTML = "Conversion result: " + conversion + " dollar(s)";
+            }
+            else {
+                conversion = (amount * 23300).toFixed(0);
+                document.getElementById('result-area').innerHTML = "Conversion result: " + conversion + " Vietnamese dong";
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

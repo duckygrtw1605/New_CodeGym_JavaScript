@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm Đại học khối D</title>
+</head>
+
+<body>
+    <h2>Tính điểm Đại học khối D</h2>
+    <form action="#">
+        Môn Toán: <input type="number" id="math-score" style="display:block; margin-bottom: 10px;">
+        Môn Văn: <input type="number" id="viet-score" style="display:block; margin-bottom: 10px;">
+        Môn Anh: <input type="number" id="english-score" style="display:block; margin-bottom: 5px;">
+    </form>
+    <br>
+    <select name="area" id="area">
+        <option value="KV1">KV1</option>
+        <option value="KV2">KV2</option>
+        <option value="KV2-NT">KV2-NT</option>
+        <option value="KV3">KV3</option>
+    </select>
+    <button type="submit" onclick="showResult()" style="display:block; margin-top: 15px;">Tính điểm</button>
+    <br>
+    <div id="result-area"></div>
+
+    <!-- KV1: cộng 0.75 điểm
+    KV2-NT: cộng 0.5 điểm
+    KV2: cộng 0.25 điểm
+    KV3: không cộng điểm  -->
+
+    <script>
+        function showResult() {
+            // Get area score value
+            let areaScore = document.getElementById('area').value;
+            switch (areaScore) {
+                case "KV1":
+                    areaScore = 0.75;
+                    break
+                case "KV2":
+                    areaScore = 0.5;
+                    break
+                case "KV2-NT":
+                    areaScore = 0.25;
+                    break
+                default:
+                    areaScore = 0;
+                    break
+            }
+
+            //Get subject score value
+            let mathScore = parseInt(document.getElementById('math-score').value);
+            let vietScore = parseInt(document.getElementById('viet-score').value);
+            let engScore = parseInt(document.getElementById('english-score').value);
+
+            //Define and print the total score
+            let total = (mathScore + vietScore + engScore + areaScore);
+            document.getElementById('result-area').innerHTML = "Tổng điểm Đại học khối D của bạn là: " + total;
+        }
+
+
+    </script>
+</body>
+
+</html>

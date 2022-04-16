@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính chỉ số cân nặng của cơ thể (JS)</title>
+</head>
+
+<body>
+    <!--                             
+        BMI <16: Gầy độ III
+        16 ≤ BMI < 17: Gầy độ II
+        17 ≤ BMI < 18.5: Gầy độ I
+        18.5 ≤ BMI < 25: Bình thường
+        25 ≤ BMI < 30: Thừa cân
+        30 ≤ BMI < 35: Béo phì độ 1
+        35 ≤ BMI < 40: Béo phì độ II
+        BMI > 40: Béo phì độ III 
+                                        -->
+
+    <h2>Tính chỉ số cân nặng của cơ thể</h2>
+    <form action="#">
+        Input height (m): <input type="number" id="height">
+        Input weight (kg): <input type="number" id="weight">
+    </form>
+    <br>
+    <button type="submit" onclick="showResult()">Show BMI result!</button>
+    <br>
+    <br>
+    <div id="result-area-bmiScore"></div>
+    <div id="result-area-bmiResult"></div>
+    <!--  -->
+    <script>
+        function showResult() {
+            //Get weight and height value
+            let inputHeight = parseFloat(document.getElementById('height').value);
+            let inputWeight = parseFloat(document.getElementById('weight').value);
+            let result;
+
+            //BMI formula
+            let bmi = (inputWeight / Math.pow(inputHeight, 2)).toFixed(2);
+            console.log(bmi);
+            if (bmi < 16) {
+                result = "Gầy";
+            }
+            else if (bmi >= 18.5 && bmi < 25){
+                result = "Bình thường";
+            }
+            else {
+                result = "Béo phì";
+            }
+            document.getElementById('result-area-bmiScore').innerHTML = "BMI score: " + bmi;
+            document.getElementById('result-area-bmiResult').innerHTML = "BMI result: " + result;
+
+        }
+    </script>
+
+</body>
+
+</html>

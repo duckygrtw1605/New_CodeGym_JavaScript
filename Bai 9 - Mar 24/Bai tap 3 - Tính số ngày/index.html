@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính số ngày trong một tháng</title>
+</head>
+
+<body>
+    <h2>Tính số ngày trong một tháng</h2>
+    <form action="#">
+        Nhập tháng: <input type="number" id="month">
+    </form>
+    <br>
+    <button type="submit" onclick="showResult()">Tính</button>
+    <br>
+    <div id="result-area"></div>
+
+    <script>
+        function showResult() {
+            let month = parseInt(document.getElementById('month').value);
+            let days; 
+            switch (month) {
+                case 4:
+                case 6:
+                case 9: 
+                case 11:
+                    days = 30;
+                    break
+                case 2:
+                    days = 29; 
+                    break
+                default:
+                    days = 31;
+                    break
+            }
+            document.getElementById('result-area').innerHTML = "Số ngày của tháng " + month + " là: " + days; 
+        }
+    </script>
+</body>
+
+</html>
