@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="addText">
+    <button onclick="add()">Add</button>
+    <button onclick="display()">Show</button>
+    <div id="result"></div>
+
+    <script>
+        var arrNumber = []
+        function add() {
+            let inputNumber = document.getElementById('addText').value;
+            arrNumber.push(inputNumber);
+        }
+
+        function display() {
+            let str = '';
+            for (let i = 0; i < arrNumber.length; i++) {
+                str += ' <p>Element ' + i + ' = ' + arrNumber[i] + '</p>';
+            }
+            document.getElementById('result').innerHTML = str;
+
+        }
+
+    </script>
+</body>
+
+</html>

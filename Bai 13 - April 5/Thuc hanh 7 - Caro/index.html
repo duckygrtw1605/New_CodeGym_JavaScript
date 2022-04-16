@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo bàn cờ caro đơn giản</title>
+</head>
+<body>
+    <div id="display-area"></div>
+    <button onclick="changeValue()">Change value</button>
+    <script>
+        var caro = [];
+        for(let i=0; i < 5; i++){
+            var subArray = [];
+            for(let j=0; j < 5; j++){
+                subArray.push("0");
+            }
+            caro.push(subArray);
+        }
+        display(caro);
+
+        function changeValue() {
+            let i = prompt("Nhập index 1: ");
+            let j = prompt("Nhập index 2: ");
+            let value = prompt("Nhập X hoặc giá trị bất kì: ");
+            caro[i][j] = value;
+            display(caro);
+        }
+
+        function display(arr) {
+            let displayArea = "";
+            for(let i=0; i < arr.length; i++){
+                for(let j=0; j < arr[i].length; j++){
+                    displayArea += arr[i][j] + " ";
+                }
+
+                displayArea += "<br>";
+            }
+
+            document.getElementById('display-area').innerHTML = displayArea;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two dimensional Array</title>
+</head>
+<body>
+    <h2>Two dimensional Array</h2>
+    <script>
+        let cities = [
+            ['Sai Gon', 'Ha Noi', 'Da Nang'], [
+            'Tom', 'Max', 'Andy']
+        ];
+
+        for (let row = 0; row < cities.length; row++) { //đi qua từng MẢNG
+            for (let col = 0; col < cities[row].length; col++) // đi qua từng PHẦN TỬ của mỗi mảng 
+                console.log(cities[row][col]);
+            // Xuống dòng mỗi kết quả:
+            console.log('');
+        }
+
+    </script>
+</body>
+</html>

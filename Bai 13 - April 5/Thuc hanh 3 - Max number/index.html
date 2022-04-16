@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+    <div id="max-number-result"></div>
+    <br>
+    <div id="min-number-result"></div>
+    <script>
+        arrNumber = [20, 11, 202, 0, 1, 32, 101, 1, 0];
+        
+        //Tìm giá trị lớn nhất
+        var maxNumber = arrNumber[0]; //Đặt số lớn nhất đầu tiên ở vị trí 0
+
+        for(let i=0; i < arrNumber.length; i++){
+            if(maxNumber <= arrNumber[i]) {
+                maxNumber = arrNumber[i]; //So sánh và Cập nhật giá trị lớn nhất cho maxNumber
+            }
+        }
+        // In kết quả
+        document.getElementById('max-number-result').innerHTML = ("Số lớn nhất trong dãy số là: " + maxNumber);
+
+        //Tìm giá trị nhỏ nhất
+        var minNumber = arrNumber[0];
+
+        for(let i=0; i < arrNumber.length; i++){
+            if(minNumber >= arrNumber[i]) {
+                minNumber = arrNumber[i]; //So sánh và Cập nhật giá trị lớn nhất cho minNumber
+            }
+        }
+        // In kết quả
+        document.getElementById('min-number-result').innerHTML = ("Số nhỏ nhất trong dãy số là: " + minNumber);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        //Mô tả: Viết một chương trình JavaScript để tìm một giá tri 
+        //được nhập vào từ hộp thoại có nằm trong mảng hay không. 
+        //Nếu có in ra vị trí của phần tử đó.
+
+        var inputNumber = parseInt(prompt("Nhập một số bất kì: "));
+        var arrNumber = [3, 5, 10, 21];
+        var checkNumber = false;
+
+        for(let i=0; i < arrNumber.length; i++){
+            let number = arrNumber[i];
+            if(inputNumber == number) {
+                checkNumber = true;
+                break
+            }
+
+        }
+        console.log(checkNumber);
+        if(checkNumber == true) {
+            document.getElementById('result').innerHTML = (inputNumber + " có trong danh sách");
+        }
+        else if(checkNumber == false) {
+            document.getElementById('result').innerHTML = (inputNumber + " KHÔNG có trong danh sách");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        //Cach 1:
+        var arrNumber = [1,2,3,4,5];
+        // var first = 0;
+        // var last = arrNumber.length - 1;
+
+        // while(first < last) {
+        //     let temp = arrNumber[first];
+        //     arrNumber[first] = arrNumber[last];
+        //     arrNumber[last] = temp; 
+        //     first++;
+        //     last--; 
+        // }
+        // document.getElementById('result').innerHTML = arrNumber.join(' - ');
+        
+        //Cach 2:
+        var reverseNumber = [];
+        for(let i = arrNumber.length - 1; i >= 0; i--){
+            reverseNumber.push(arrNumber[i]);
+            console.log(arrNumber[i]);
+        }
+        document.getElementById('result').innerHTML = reverseNumber.join(' - ');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm GTNN-GTLN trong 2 mảng</title>
+</head>
+
+<body>
+    <div id="result-max"></div>
+    <div id="result-min"></div>
+
+    <script>
+        // Tạo ra nhiều mảng chứa các phần tử số ngẫu nhiên
+        var emptArray = []; //Khai báo một mảng rỗng
+        const quantity = 10; //Số lượng mảng muốn input vào emptArray
+        for (let i = 0; i < quantity; i++) {
+            emptArray.push([]); //Push các mảng rỗng vào emptArray
+            for (let j = 0; j < quantity; j++) {
+                element = parseInt(Math.random() * 99 - 1); //Khai báo phần tử là số ngẫu nhiên
+                emptArray[i].push(element); // Push các số ngẫu nhiên vào mỗi mảng rỗng con trong emptyArray
+            }
+        }
+
+        console.log(emptArray);
+        var max = min = emptArray[0][0];
+        for (let i = 0; i < emptArray.length; i++) {
+            for (let j = 0; j < emptArray.length; j++) {
+                if (max < emptArray[i][j]) {
+                    max = emptArray[i][j];
+                }
+
+                if (min > emptArray[i][j]) {
+                    min = emptArray[i][j];
+                }
+            }
+        }
+
+        document.getElementById('result-max').innerHTML = "GTLN: " + max;
+        document.getElementById('result-min').innerHTML = "GTNN: " + min;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+</head>
+
+<body>
+    <!-- BT1 -->
+    <div id="result"></div>
+    <br>
+    <!-- BT3 -->
+    Nhập văn bản: <input type="text" id="inputText">
+    <button onclick="convert()">Convert</button>
+    <div id="convert-string"></div>
+
+    <script>
+        //Bai tap 1:
+        var myColor = ["Red", "Green", "White", "Black"];
+        document.getElementById('result').innerHTML = myColor.join(',');
+
+
+        //Bai tap 2:
+        // Mô tả:
+        // Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. 
+        // Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+        var arrNumber = [0, 2, 5, 4, 6, 8];
+        var arrResult = [arrNumber[0]]; //Do ở loop, i bắt đầu từ 1 
+        for (let i = 1; i < arrNumber.length; i++) {
+            if ((arrNumber[i - 1] % 2 === 0) && (arrNumber[i] % 2 === 0)) { //so sánh index tại 0 và 1 đến hết length
+                arrResult.push('-', arrNumber[i]);
+            }
+            else {
+                arrResult.push(arrNumber[i]);
+            }
+        }
+        console.log(arrResult.join(''));
+
+
+        // Bài tập 3:
+        /// ‘The Quick Brown Fox’ kết quả của chương trình là ‘tHE qUICK bROWN fOX’.
+        // var string = promt("Nhập bất kì văn bản: ");
+        
+
+        function convert() {
+            var inputString = document.getElementById('inputText').value;
+            var splitString = inputString.split('');
+            var subArray = [];
+
+            for (let i = 0; i < splitString.length; i++) {
+                if (splitString[i] == splitString[i].toLowerCase()) {
+                    subArray.push(splitString[i].toUpperCase());
+                }
+                if (splitString[i] == splitString[i].toUpperCase()) {
+                    subArray.push(splitString[i].toLowerCase());
+                }
+
+            }
+
+            document.getElementById('convert-string').innerHTML = subArray.join('');
+        }
+
+    </script>
+</body>
+
+</html>
