@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        var constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        var inputStar = prompt("Input star: ");
+
+        function findConst(star) {
+            for (let i = 0; i < stars.length; i++) {
+                if (star.toLowerCase() == stars[i].toLowerCase()) {
+                    return alert("The star's constellation is: " + constellation[i]);
+                    break
+                }
+            }
+            return alert("Your input star is not available.");
+        }
+
+        findConst(inputStar);
+    </script>
+</body>
+</html>

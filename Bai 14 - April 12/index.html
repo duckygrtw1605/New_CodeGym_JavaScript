@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // //Tong 1-10
+        // let sum = 0;
+        // for (let i = 0; i < 10; i++) sum+=1; 
+        // console.log(sum);
+
+        // // Tong 20 - 37
+        // let sum2 = 0;
+        // for (let i = 19; i < 37; i++) sum+=1; 
+        // console.log(sum2);
+
+        // // Tong 35 - 49
+        // let sum3 = 0;
+        // for (let i = 34; i < 49; i++) sum+=1; 
+        // console.log(sum3);
+
+        //Su dung function
+        function sumRange(from, to) {
+            let sum = 0;
+            for (let i = from; i <= to; i++){
+                sum += i; 
+            }
+            return console.log("Sum from " + from + " to " + to + " is " + sum);
+             
+        }
+        sumRange(1, 10);
+        sumRange(20, 37);
+        sumRange(35, 49);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+
+<body>
+    <script>
+        function isPalindrome(inputWord) {
+            let word = inputWord.toLowerCase();
+            //Remove space and special characters
+            word = word.replace(/[^a-zA-Z]/g, "");
+            //Split the word
+            let splitArray = word.split('');
+            // Define the lenght
+            let splitArrayLength = splitArray.length;
+            //Check Palindrome
+            for (let i = 0; i < splitArray.length && i >= 0; i++) {
+                if (splitArray[i] != splitArray[splitArrayLength - i - 1]) {
+                    console.log(splitArray);
+                    return inputWord + " is NOT a Palindrome" + "<br>";
+                }
+            }
+            return inputWord + " is a Palindrome" + "<br>";
+        }
+        // Test cases:
+        document.write(isPalindrome('Race Car')); //true
+        document.write(isPalindrome('My age is 0, 0 si ega ym.')); //true
+        document.write(isPalindrome('A man, a plan, a canal. Panama')); //true
+        document.write(isPalindrome('almostomla')); //false
+    </script>
+</body>
+
+</html>

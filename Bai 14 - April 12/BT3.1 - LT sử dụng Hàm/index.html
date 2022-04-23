@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. 
+        // Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.
+
+        number1 = parseInt(prompt("Nhập số thứ 1: "));
+        number2 = parseInt(prompt("Nhập số thứ 2: "));
+
+        function compareNumber(numb1, numb2) {
+            if (numb1 > numb2) {
+                alert("Số thứ 1 > Số thứ 2")
+            }
+            else {
+                let sum = numb1 + numb2;
+                console.log("Tổng 2 số là: " + sum);
+            }
+        }
+
+        compareNumber(number1, number2)
+    </script>
+</body>
+</html>

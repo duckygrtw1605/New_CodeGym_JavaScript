@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let birthyear = prompt('Input your birth year: ');
+
+        function calculateAge(birthyear) {
+            const now = new Date();
+            let currentYear = now.getFullYear();
+            let yourAge = currentYear - birthyear;
+
+            console.log("Your age is: " + yourAge);
+        }
+
+        calculateAge(birthyear);
+
+        //check even number
+        function isEven(number) {
+            return console.log(number % 2 == 0);
+        }
+        const number = 9;
+        isEven(number);
+    </script>
+</body>
+</html>

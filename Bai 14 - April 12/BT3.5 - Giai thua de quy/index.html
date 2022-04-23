@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Tính giai thừa một số
+        function calFactorial(number) {
+            if (number == 0) {
+                return 1;
+            }
+            return number * calFactorial(number - 1);
+        }
+        console.log(calFactorial(3));
+
+        // Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. 
+        // Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+        function checkDataType(input) {
+            if (typeof (input) == 'number') {
+                document.write(input + " is a number" + '<br>');
+            }
+            else {
+                document.write(input + " is NOT a number" + '<br>');
+            }
+        }
+        checkDataType(5);
+        checkDataType("Nga");
+
+        // Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+        function findMin(numb1, numb2, numb3) {
+            let arrNumber = [];
+            arrNumber.push(numb1, numb2, numb3);
+
+            let min = arrNumber[0];
+            for (let i = 0; i < arrNumber.length; i++) {
+                if (min > arrNumber[i]) {
+                    min = arrNumber[i];
+                }
+            }
+            return min;
+        }
+        document.write("Min value is: " + findMin(10, 22, 50));
+
+        // Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+        let arrNumber = [1, 2, 3, 4, 5];
+
+        function convertList() {
+            let arrLength = arrNumber.length - 1;
+            let first = 0;
+            let last = arrLength;
+
+            while (first < last) {
+                let temp = arrNumber[first];
+                arrNumber[first] = arrNumber[last];
+                arrNumber[last] = temp;
+
+                first++;
+                last--;
+
+
+            }
+
+            return arrNumber;
+        }
+
+        console.log(convertList());
+
+        // Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, 
+        // kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. 
+        // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. 
+        let names = ['Tom', 'Andy', 'Billy', 'Thomas', 'Billy', 'Andy', 'Anna', 'Billy'];
+
+        function findKeyword(keyword) {
+            let namesLenght = names.length;
+            let count = 0;
+            for (let i = 0; i < namesLenght; i++) {
+                if (keyword == names[i]) {
+                    count +=1; 
+                }
+            }
+
+            if (count > 0) {
+                return('<br>' + keyword + " appears: " + count + " time(s)");
+            }
+            else {
+                return -1; 
+            }
+        }
+        document.write(findKeyword('Billy'));
+        document.write(findKeyword('Andy'));
+
+    </script>
+</body>
+
+</html>
